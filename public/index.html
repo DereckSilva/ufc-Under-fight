@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Links</title>
+</head>
+<body>
+    <h1>Seleção de Links</h1>
+    <ul>
+        <li><a onclick="updateVideo('./videos/Peek 08-10-2023 17-28.mp4')">Vídeo 2</a></li>
+        <li><a onclick="updateVideo('./videos/Peek 26-10-2023 22-29.mp4')">Vídeo 3</a></li>
+        <li><a onclick="updateVideo('./videos/Peek 27-10-2023 22-49.mp4')">Vídeo 4</a></li>
+    </ul>
+</body>
+<script>
+    function updateVideo(videoSrc) {
+        localStorage.setItem('videoPerso', videoSrc);
+    }
+</script>
+</html>
