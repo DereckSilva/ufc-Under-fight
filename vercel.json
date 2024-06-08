@@ -1,8 +1,18 @@
-{ 
-    "version": 2, 
+{
+    "version": 2,
     "routes": [
-        { "src": "/(.*)", "dest": "/server.js" },
-        { "src": "/(.*)", "dest": "/index.html" },
-        { "src": "/video(.*)", "dest": "/video.html" }
+      {
+        "src": "/video",
+        "dest": "/video.html"
+      },
+      {
+        "src": "/",
+        "dest": "/index.html"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/server.js"
+      }
     ]
-}
+  }
+  
