@@ -15,7 +15,7 @@
 </body>
 <script>
     function updateVideo(videoSrc) {
-        localStorage.setItem('videoPerso', videoSrc);
+        document.cookie = "videoPerso="+videoSrc;
     }
 </script>
 </html>

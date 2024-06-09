@@ -15,22 +15,34 @@
         function loadVideo() {
           const video                = document.getElementById('video');
           const videoSource          = document.getElementById('videoSource');
-          const validationVideoPerso = localStorage.getItem('videoPerso') === null || localStorage.getItem('videoPerso') === '';
+          const validationVideoPerso = getCookie('videoPerso') === null || getCookie('videoPerso') === '';
 
-          videoSource.src = validationVideoPerso ? './videos/ANIMACAO_MaAlimentacao_TELA_01_v02.mp4' : localStorage.getItem('videoPerso');
+          videoSource.src = validationVideoPerso ? './videos/ANIMACAO_MaAlimentacao_TELA_01_v02.mp4' : getCookie('videoPerso');
+          document.cookie = 'videoPerso='
           video.load();
 
           video.addEventListener('ended', function() {
-              loadVideo()
+              loadVideo();
+              console.log('acabou')
           });
-          localStorage.clear();
+        }
+
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.trim().split('=');
+                if (cookieName === name) {
+                    return cookieValue;
+                }
+            }
+            return null;
         }
 
         // olhando se algum video perso foi incluido no storage
         setInterval(function () {
           const video       = document.getElementById('video');
           const videoSource = document.getElementById('videoSource');
-          localStorage.getItem('videoPerso') ? loadVideo() : '';
+          getCookie('videoPerso') ? loadVideo() : '';
         }, 1000);
 
         // chamando o carregamento de vídeo para cada vez que o video acaba
