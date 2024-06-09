@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seleção de Links</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
+    <title>Seleção de </title>
 </head>
 <body>
-    <h1>Seleção de Links</h1>
-    <ul>
-        <li><a onclick="updateVideo('./videos/Peek 08-10-2023 17-28.mp4')">Vídeo 2</a></li>
-        <li><a onclick="updateVideo('./videos/Peek 26-10-2023 22-29.mp4')">Vídeo 3</a></li>
-        <li><a onclick="updateVideo('./videos/Peek 27-10-2023 22-49.mp4')">Vídeo 4</a></li>
-    </ul>
+    <div class="ufcLinks" width="600px">
+        <a id="link1" onclick="updateVideo('./videos/Peek 08-10-2023 17-28.mp4', 'link1')">Blogueirinha que não é nutri, mas passa dieta.</a>
+        <a id="link2" onclick="updateVideo('./videos/Peek 08-10-2023 17-28.mp4', 'link2')">A má alimentação</a>
+        <a id="link3" onclick="updateVideo('./videos/Peek 26-10-2023 22-29.mp4', 'link3')">Quem fala que a dieta é cara, mas não perde uma balada.</a>
+        <a id="link4" onclick="updateVideo('./videos/Peek 27-10-2023 22-49.mp4', 'link4')">Quem diz que só não emagrece por causa da tireóide.</a>
+    </div>
 </body>
 <script>
-    function updateVideo(videoSrc) {
+    function updateVideo(videoSrc, linkId) {
+        // Define o nome do cookie com base no ID do link
         document.cookie = "videoPerso="+videoSrc;
+
+        // Restaura o estilo padrão para todos os links
+        var links = document.getElementsByClassName('ufcLinks')[0].getElementsByTagName('a');
+        for (var i = 0; i < links.length; i++) {
+            links[i].style.backgroundColor = '';
+            links[i].style.color = '';
+        }
+
+        // Define o estilo para o link clicado
+        var clickedLink = document.getElementById(linkId);
+        clickedLink.style.backgroundColor = '#9f0753';
+        clickedLink.style.color = '#FFFF';
     }
+
+    // Adiciona um ouvinte de evento para capturar cliques fora dos links
+    document.addEventListener('click', function(event) {
+        var ufcLinks = document.getElementsByClassName('ufcLinks')[0];
+        if (!ufcLinks.contains(event.target)) {
+            var links = ufcLinks.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].style.backgroundColor = '';
+                links[i].style.color = '';
+            }
+        }
+    });
 </script>
 </html>

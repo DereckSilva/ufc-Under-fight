@@ -1,0 +1,119 @@
+/* Estilos específicos para iPads em modo retrato 1080x1920 */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1080px) 
+and (orientation: portrait) {
+    .container {
+        width: 70%; /* Ajuste o tamanho do container conforme necessário */
+    }
+
+    body {
+        background-image: url('../images/arteUFC.png');
+        background-size:  100% 135vw;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+    
+    .ufcLinks {
+        position: relative;
+        top: 590px;
+    }
+    
+    .ufcLinks a {
+        list-style-type: none;
+        text-align: center;
+        font-weight: bolder;
+        font-family: sans-serif;
+        margin: auto;
+        width: 50%;
+        height: 50px;
+        cursor: pointer;
+        padding: 10px;
+        border: 5px solid #9f0753;
+        border-radius: 46px;
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+    }
+}
+
+/* Estilos específicos para iPads em modo paisagem 1080x1920 */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1080px) 
+and (orientation: landscape) {
+    .container {
+        width: 60%; /* Ajuste o tamanho do container conforme necessário */
+    }
+    
+    body {
+        background-image: url('../images/arteUFC.png');
+        background-size:  100% 135vw;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+    
+    .ufcLinks {
+        position: relative;
+        top: 570px;
+    }
+    
+    .ufcLinks a {
+        list-style-type: none;
+        text-align: center;
+        font-weight: bolder;
+        font-family: sans-serif;
+        margin: auto;
+        width: 50%;
+        height: 50px;
+        cursor: pointer;
+        padding: 10px;
+        border: 5px solid #9f0753;
+        border-radius: 46px;
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Estilos gerais */
+body {
+    background-image: url('../images/arteUFC.png');
+    background-size:  100% 135vw;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.ufcLinks {
+    position: relative;
+    top: 500px;
+}
+
+.ufcLinks a {
+    list-style-type: none;
+    text-align: center;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin: auto;
+    font-size: 24px;
+    width: 600px;
+    height: 50px;
+    cursor: pointer;
+    padding: 20px;
+    border: 5px solid #9f0753;
+    border-radius: 46px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ufcLinks a:hover {
+    background-color: #9f0753; 
+    color: #FFFF;
+}
