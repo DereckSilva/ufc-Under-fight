@@ -92,27 +92,78 @@ and (orientation: landscape) {
 
 /* Estilos gerais */
 body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Para evitar scrollbars indesejados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 135vh; /* 135vw convertido para altura */
+    height: 100vw; /* 100% convertido para largura */
     background-image: url('../images/arte.png');
-    background-size:  100% 135vw;
+    background-size: contain; /* Ajusta a imagem para cobrir completamente o elemento */
     background-position: top;
     background-repeat: no-repeat;
+    transform: translate(-50%, -50%) rotate(90deg); /* Roda a imagem e centra */
 }
+
+
+.screen {
+    width: 100vh; 
+    height: 100vw; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg); 
+    transform-origin: center; 
+}
+.content {
+    text-align: center;
+    color: white;
+}
+
+.ufcLinks {
+    width: 600px;
+    margin: 20px auto;
+}
+
+.ufcLinks a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
 
 .textMain {
     text-align: center;
-    margin: 0 auto;
     font-family: 'fontMac2';
     font-weight: 500;
-    position: relative;
-    top: 400px;
-    font-size: 34px;
-    width: 330px;
+    padding-top: 150px;
+    margin-left: 10px;
+    display: flex;
+    align-content: start;
+    justify-content: start;
+    font-size: 39px;
+    width: 550px;
 }
 
-
 .ufcLinks {
-    position: relative;
-    top: 420px;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    align-content: end;
+    justify-content: end;
 }
 
 .ufcLinks a {
@@ -120,7 +171,6 @@ body {
     text-align: center;
     font-weight: bolder;
     font-family: 'FontMac';
-    margin: auto;
     font-size: 24px;
     width: 600px;
     height: 50px;
@@ -136,6 +186,7 @@ body {
 }
 
 .ufcLinks a:hover {
+    transform: none;
     background-color: #9f0753; 
     color: #FFFF;
 }
