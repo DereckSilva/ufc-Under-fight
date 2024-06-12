@@ -4,7 +4,7 @@ and (min-device-width: 768px)
 and (max-device-width: 1080px) 
 and (orientation: portrait) {
     .container {
-        width: 70%; /* Ajuste o tamanho do container conforme necessário */
+        width: 70%; 
     }
 
     body {
@@ -45,7 +45,7 @@ and (min-device-width: 768px)
 and (max-device-width: 1080px) 
 and (orientation: landscape) {
     .container {
-        width: 60%; /* Ajuste o tamanho do container conforme necessário */
+        width: 60%;
     }
     
     body {
@@ -94,7 +94,7 @@ and (orientation: landscape) {
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Para evitar scrollbars indesejados */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,13 +107,13 @@ body::before {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 135vh; /* 135vw convertido para altura */
-    height: 100vw; /* 100% convertido para largura */
+    width: 135vh; 
+    height: 100vw; 
     background-image: url('../images/arte.png');
-    background-size: contain; /* Ajusta a imagem para cobrir completamente o elemento */
+    background-size: contain; 
     background-position: top;
     background-repeat: no-repeat;
-    transform: translate(-50%, -50%) rotate(90deg); /* Roda a imagem e centra */
+    transform: translate(-50%, -50%) rotate(90deg); /* girando a imagem centralizada na tela */
 }
 
 
@@ -124,7 +124,7 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: rotate(90deg); 
+    transform: rotate(90deg); /* girando o conteúdo da tela */
     transform-origin: center; 
 }
 .content {
